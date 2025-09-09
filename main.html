@@ -4,26 +4,23 @@
   <title>Next Palindrome</title>
 </head>
 <body>
-<script>
-function isPalindrome(num) {
-  let str = num.toString();
-  return str === str.split('').reverse().join('');
-}
+  <script>
+    function isPalindrome(num) {
+      let str = num.toString();
+      return str === str.split("").reverse().join("");
+    }
 
-function nextPalindrome(num) {
-  let n = num + 1; // start checking from next number
-  while (true) {
-    if (isPalindrome(n)) {
+    function nextPalindrome(n) {
+      n++; // next number check karna hai
+      while (!isPalindrome(n)) {
+        n++;
+      }
       return n;
     }
-    n++;
-  }
-}
 
-// Take input from user
-let input = parseInt(prompt("Enter a number:"));
-let result = nextPalindrome(input);
-alert("Next Palindrome is: " + result);
-</script>
+    let input = parseInt(prompt("Enter a number:"));
+    let result = nextPalindrome(input);
+    alert("Next Palindrome is: " + result);
+  </script>
 </body>
 </html>
