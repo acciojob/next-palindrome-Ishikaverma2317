@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Next Palindrome</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+<script>
+function isPalindrome(num) {
+  let str = num.toString();
+  return str === str.split('').reverse().join('');
+}
+
+function nextPalindrome(num) {
+  let n = num + 1; // start checking from next number
+  while (true) {
+    if (isPalindrome(n)) {
+      return n;
+    }
+    n++;
+  }
+}
+
+// Take input from user
+let input = parseInt(prompt("Enter a number:"));
+let result = nextPalindrome(input);
+alert("Next Palindrome is: " + result);
 </script>
-
 </body>
-
 </html>
